@@ -20,6 +20,14 @@ async function run() {
     console.log("\n📋 Driver Names:");
     driverList.forEach(driver => console.log(driver.name));
 
+    // === Insert all drivers into MongoDB ===
+const db = client.db("Week2DB");
+const drivers = db.collection("drivers");
+
+const insertResult = await drivers.insertMany(driverList);
+console.log("\n🚗 Inserted Drivers:", insertResult.insertedCount);
+
+
   } catch (err) {
     console.error("❌ Error:", err);
   } finally {
