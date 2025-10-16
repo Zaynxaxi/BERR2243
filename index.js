@@ -7,6 +7,19 @@ async function run() {
   try {
     await client.connect();
     console.log("✅ Connected to MongoDB!");
+
+    // === JSON ARRAY OF DRIVERS ===
+    const driverList = [
+      { name: "Zayn", rating: 4.4, available: true },
+      { name: "Alii", rating: 4.8, available: true },
+      { name: "Mumaii", rating: 5.0, available: true },
+      { name: "Hammad", rating: 4.6, available: false }
+    ];
+
+    // === Display driver names ===
+    console.log("\n📋 Driver Names:");
+    driverList.forEach(driver => console.log(driver.name));
+
   } catch (err) {
     console.error("❌ Error:", err);
   } finally {
@@ -15,4 +28,3 @@ async function run() {
 }
 
 run();
-
