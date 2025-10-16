@@ -45,6 +45,11 @@ async function run() {
     console.log("\n✅ Updated Driver Info:");
     console.log(updatedDriver);
 
+    // === Step 6: Delete one unavailable driver ===
+    const deleteResult = await db.collection('drivers').deleteOne({ available: false });
+    console.log("\n🗑️ Driver deleted with result:");
+    console.log(deleteResult);
+
   } catch (err) {
     console.error("❌ Error:", err);
   } finally {
