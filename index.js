@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 
-const uri = "mongodb+srv://b122320036_db_user:Zaynxaxi3011@berr2243.veh2kz8.mongodb.net/?retryWrites=true&w=majority&appName=BERR2243";
+const uri = "mongodb+srv://b122320036_db_user:Zaynxaxi3011@berr2243.veh2kz8.mongodb.net/Week2DB?retryWrites=true&w=majority&tls=true&appName=BERR2243";
 const client = new MongoClient(uri);
 
 async function run() {
@@ -8,7 +8,7 @@ async function run() {
     await client.connect();
     console.log("✅ Connected to MongoDB!");
 
-    const db = client.db("Week2DB"); // your database name
+    const db = client.db("Week2DB");
     const driversCollection = db.collection("drivers");
 
     // === Insert Drivers ===
@@ -31,6 +31,20 @@ async function run() {
 
     console.log("\n🌟 Available High-Rated Drivers (≥4.5):");
     console.log(availableDrivers);
+
+    // === Step 5: Update Zayn’s rating by +0.1 ===
+    const updateResult = await driversCollection.updateOne(
+      { name: "Zayn" },        // find Zayn
+      { $inc: { rating: 0.1 } } // add 0.1 to rating
+    );
+
+    console.log("\n🛠️ Update Result:");
+    console.log(updateResult);
+
+    const updatedDriver = await driversCollection.findOne({ name: "Zayn" });
+    console.log("\n✅ Updated Driver Info:");
+    console.log(updatedDriver);
+
   } catch (err) {
     console.error("❌ Error:", err);
   } finally {

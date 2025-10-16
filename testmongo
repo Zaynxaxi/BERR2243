@@ -1,0 +1,18 @@
+const { MongoClient } = require("mongodb");
+
+const uri = "mongodb+srv://b122320036_db_user:Zaynxaxi3011@berr2243.veh2kz8.mongodb.net/?retryWrites=true&w=majority";
+
+async function main() {
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
+    console.log("✅ MongoDB module works and connected successfully!");
+  } catch (err) {
+    console.error("❌ Connection failed:", err.message);
+  } finally {
+    await client.close();
+    console.log("✅ Connection closed");
+  }
+}
+
+main();
