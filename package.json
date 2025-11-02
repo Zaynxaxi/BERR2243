@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Zaynxaxi/BERR2243#readme",
   "dependencies": {
+    "express": "^5.1.0",
     "mongodb": "^6.20.0"
   }
 }
