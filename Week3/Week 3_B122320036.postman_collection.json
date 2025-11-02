@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "cee405d0-c8e4-4279-ac72-db88a138cdf6",
+		"name": "Week 3_B122320036",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49663217",
+		"_collection_link": "https://b122320036-9168220.postman.co/workspace/Muhammad-Ali's-Workspace~d3639840-eea7-4dbf-8824-4a9864104c6f/collection/49663217-cee405d0-c8e4-4279-ac72-db88a138cdf6?action=share&source=collection_link&creator=49663217"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/rides",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pickup\": \"Central Park\",\r\n  \"destination\": \"Times Square\",\r\n  \"driverId\": \"DRIVER123\",\r\n  \"status\": \"requested\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rides",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rides"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/rides",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pickup\": \"Central Park\",\r\n  \"destination\": \"Times Square\",\r\n  \"driverId\": \"DRIVER123\",\r\n  \"status\": \"requested\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rides",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rides"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/rides/6907055b05f991ec3cf5d176",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"cancelled\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rides/6907055b05f991ec3cf5d176",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rides",
+						"6907055b05f991ec3cf5d176"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/rides/6907055b05f991ec3cf5d176",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rides/6907055b05f991ec3cf5d176",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rides",
+						"6907055b05f991ec3cf5d176"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
